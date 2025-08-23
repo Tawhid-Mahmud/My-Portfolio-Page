@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Mahmud - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #2c3e50;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            padding-top: 80px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #3498db;
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .nav-button {
+            padding: 0.4rem 0.8rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .resume-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .resume-btn:hover {
+            background: linear-gradient(135deg, #2980b9, #21618c);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .github-btn, .linkedin-btn {
+            background: #f8f9fa;
+            color: #2c3e50;
+            border: 1px solid rgba(44, 62, 80, 0.2);
+        }
+
+        .github-btn:hover {
+            background: #2c3e50;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .linkedin-btn:hover {
+            background: #0077b5;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        .hero-name {
+            font-size: clamp(4rem, 8vw, 8rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c3e50, #3498db, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Passion Section */
+        .passion-section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .passion-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .passion-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #5d6d7e;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .passion-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 2rem;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            min-width: 280px;
+            flex: 1;
+            max-width: 400px;
+            border: 1px solid rgba(44, 62, 80, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #e74c3c);
+            transition: left 0.6s ease;
+        }
+
+        .highlight-item:hover::before {
+            left: 0;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            border-color: #3498db;
+        }
+
+        .highlight-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.4s ease;
+        }
+
+        .highlight-item:hover .highlight-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .highlight-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .highlight-item:hover .highlight-title {
+            color: #3498db;
+        }
+
+        .highlight-desc {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+
+        .highlight-item:hover .highlight-desc {
+            color: #5d6d7e;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .projects-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #2c3e50;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            cursor: pointer;
+            height: 400px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::before {
+            opacity: 1;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .project-overlay::before {
+            content: '+';
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .project-github {
+            color: #7f8c8d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-github:hover {
+            color: #3498db;
+        }
+
+        .project-github::before {
+            content: '⚡';
+            font-size: 14px;
+        }
+
+        /* Individual project background images */
+        .project-card:nth-child(1) .project-image {
+            background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center');
+        }
+
+        .project-card:nth-child(2) .project-image {
+            background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center');
+        }
+
+        .project-card:nth-child(3) .project-image {
+            background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center');
+        }
+
+        .project-card:nth-child(4) .project-image {
+            background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&crop=center');
+        }
+
+        .project-card:nth-child(5) .project-image {
+            background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center');
+        }
+
+        .project-card:nth-child(6) .project-image {
+            background-image: url('https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=600&h=400&fit=crop&crop=center');
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #2c3e50;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: #5d6d7e;
+            border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .contact-description {
+            font-size: 1.2rem;
+            color: #5d6d7e;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Navigation */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .nav-buttons {
+                gap: 0.5rem;
+            }
+            
+            .nav-button {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .passion-highlights {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-name {
+                font-size: 3rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#home">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="Mohammad_mahmud_resume.pdf" class="nav-button resume-btn" target="_blank" rel="noopener noreferrer">
+                    Resume
+                </a>
+                <a href="https://github.com/Tawhid-Mahmud" class="nav-button github-btn" target="_blank">
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/mahmud45" class="nav-button linkedin-btn" target="_blank">
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-name">Mohammad Mahmud</h1>
+            <p class="hero-subtitle">Portfolio</p>
+        </div>
+    </section>
+
+    <!-- Passion Section -->
+    <section class="passion-section fade-in">
+        <h2 class="passion-title">My Passion for Data Analytics & Software Engineering</h2>
+        <p class="passion-text">
+            I'm driven by the power of data to tell stories and the elegance of code to solve complex problems. 
+            My journey combines analytical thinking with creative problem-solving, transforming raw data into 
+            actionable insights and building software solutions that make a real impact.
+        </p>
+        
+        <div class="passion-highlights">
+            <div class="highlight-item">
+                <div class="highlight-icon">📊</div>
+                <h3 class="highlight-title">Data Analytics</h3>
+                <p class="highlight-desc">Transforming data into meaningful insights through statistical analysis and visualization</p>
+            </div>
+            <div class="highlight-item">
+                <div class="highlight-icon">💻</div>
+                <h3 class="highlight-title">Software Engineering</h3>
+                <p class="highlight-desc">Building scalable, efficient, and user-centric applications with modern technologies</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <h2 class="projects-title fade-in">My Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card" onclick="window.open('#', '_blank')">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Marketing Ad Campaign Analysis</h3>
+                        <a href="https://github.com/tawhid-mahmud/marketing-campaign-analysis" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="window.open('#', '_blank')">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">EV Registration Data Analysis</h3>
+                        <a href="https://github.com/tawhid-mahmud/ev-registration-analysis" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="window.open('#', '_blank')">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Customer Churn Prediction</h3>
+                        <a href="https://github.com/tawhid-mahmud/customer-churn-prediction" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="window.open('#', '_blank')">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ML Model Deployment Platform</h3>
+                        <a href="https://github.com/tawhid-mahmud/ml-deployment-platform" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="window.open('#', '_blank')">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Lead Generation Analytics</h3>
+                        <a href="https://github.com/tawhid-mahmud/lead-generation-analytics" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="window.open('#', '_blank')">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sales Performance Dashboard</h3>
+                        <a href="https://github.com/tawhid-mahmud/sales-performance-dashboard" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2 class="skills-title fade-in">Technical Skills</h2>
+        
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3>📊 Data Analytics</h3>
+                <ul class="skill-list">
+                    <li>Data Analytics & Visualization</li>
+                    <li>Microsoft Excel (Advanced)</li>
+                    <li>Tableau</li>
+                    <li>SQL</li>
+                    <li>Database Management</li>
+                    <li>Power BI</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3>💻 Software Engineering</h3>
+                <ul class="skill-list">
+                    <li>AI Integration</li>
+                    <li>React & Next.js</li>
+                    <li>JavaScript</li>
+                    <li>Git & GitHub</li>
+                    <li>MongoDB & PostgreSQL</li>
+                    <li>Flask</li>
+                    <li>API Development & Integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="contact-title fade-in">Let's Connect</h2>
+        <p class="contact-description fade-in">
+            I'm always open to discussing new opportunities, interesting projects, or just having a chat about data and technology.
+        </p>
+        
+        <div class="contact-info fade-in">
+            <div class="contact-item">
+                <span>📧</span>
+                <span>tawhid.mahmud42@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <span>📍</span>
+                <span>New York, NY</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Cursor following image effect - REMOVED
+        const floatingImages = null; // Removed image generation
+        
+        let imageCounter = 0;
+        let lastImageTime = 0;
+
+        // All image generation code removed
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced project card interactions
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.zIndex = '10';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

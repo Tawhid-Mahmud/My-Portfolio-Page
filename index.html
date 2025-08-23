@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Mahmud - Portfolio</title>
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%233498db'/><text x='50' y='65' font-family='Arial, sans-serif' font-size='40' font-weight='bold' text-anchor='middle' fill='white'>MM</text></svg>">
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%233498db'/><text x='50' y='65' font-family='Arial, sans-serif' font-size='40' font-weight='bold' text-anchor='middle' fill='white'>MM</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -95,7 +100,8 @@
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
         }
 
-        .github-btn, .linkedin-btn {
+        .github-btn,
+        .linkedin-btn {
             background: #f8f9fa;
             color: #2c3e50;
             border: 1px solid rgba(44, 62, 80, 0.2);
@@ -525,11 +531,11 @@
             .nav-menu {
                 display: none;
             }
-            
+
             .nav-buttons {
                 gap: 0.5rem;
             }
-            
+
             .nav-button {
                 padding: 0.3rem 0.6rem;
                 font-size: 0.75rem;
@@ -547,16 +553,16 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .passion-highlights {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .hero-name {
                 font-size: 3rem;
             }
-            
+
             .contact-info {
                 flex-direction: column;
                 align-items: center;
@@ -564,6 +570,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -575,13 +582,13 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="Mohammad_mahmud_resume.pdf" class="nav-button resume-btn" target="_blank" rel="noopener noreferrer">
+                <a href="#" class="nav-button resume-btn" target="_blank" download="Mohammad_Mahmud_Resume.pdf">
                     Resume
                 </a>
-                <a href="https://github.com/Tawhid-Mahmud" class="nav-button github-btn" target="_blank">
+                <a href="https://github.com/mohammadmahmud" class="nav-button github-btn" target="_blank">
                     GitHub
                 </a>
-                <a href="https://linkedin.com/in/mahmud45" class="nav-button linkedin-btn" target="_blank">
+                <a href="https://linkedin.com/in/mohammadmahmud" class="nav-button linkedin-btn" target="_blank">
                     LinkedIn
                 </a>
             </div>
@@ -600,21 +607,23 @@
     <section class="passion-section fade-in">
         <h2 class="passion-title">My Passion for Data Analytics & Software Engineering</h2>
         <p class="passion-text">
-            I'm driven by the power of data to tell stories and the elegance of code to solve complex problems. 
-            My journey combines analytical thinking with creative problem-solving, transforming raw data into 
+            I'm driven by the power of data to tell stories and the elegance of code to solve complex problems.
+            My journey combines analytical thinking with creative problem-solving, transforming raw data into
             actionable insights and building software solutions that make a real impact.
         </p>
-        
+
         <div class="passion-highlights">
             <div class="highlight-item">
                 <div class="highlight-icon">📊</div>
                 <h3 class="highlight-title">Data Analytics</h3>
-                <p class="highlight-desc">Transforming data into meaningful insights through statistical analysis and visualization</p>
+                <p class="highlight-desc">Transforming data into meaningful insights through statistical analysis and
+                    visualization</p>
             </div>
             <div class="highlight-item">
                 <div class="highlight-icon">💻</div>
                 <h3 class="highlight-title">Software Engineering</h3>
-                <p class="highlight-desc">Building scalable, efficient, and user-centric applications with modern technologies</p>
+                <p class="highlight-desc">Building scalable, efficient, and user-centric applications with modern
+                    technologies</p>
             </div>
         </div>
     </section>
@@ -623,7 +632,7 @@
     <section id="projects" class="projects-section">
         <div class="projects-container">
             <h2 class="projects-title fade-in">My Projects</h2>
-            
+
             <div class="projects-grid">
                 <div class="project-card" onclick="window.open('#', '_blank')">
                     <div class="project-image">
@@ -631,7 +640,8 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Marketing Ad Campaign Analysis</h3>
-                        <a href="https://github.com/tawhid-mahmud/marketing-campaign-analysis" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                        <a href="https://github.com/tawhid-mahmud/marketing-campaign-analysis" class="project-github"
+                            onclick="event.stopPropagation()">View on GitHub</a>
                     </div>
                 </div>
 
@@ -641,7 +651,8 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">EV Registration Data Analysis</h3>
-                        <a href="https://github.com/tawhid-mahmud/ev-registration-analysis" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                        <a href="https://github.com/tawhid-mahmud/ev-registration-analysis" class="project-github"
+                            onclick="event.stopPropagation()">View on GitHub</a>
                     </div>
                 </div>
 
@@ -651,7 +662,8 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Customer Churn Prediction</h3>
-                        <a href="https://github.com/tawhid-mahmud/customer-churn-prediction" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                        <a href="https://github.com/tawhid-mahmud/customer-churn-prediction" class="project-github"
+                            onclick="event.stopPropagation()">View on GitHub</a>
                     </div>
                 </div>
 
@@ -661,7 +673,8 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">ML Model Deployment Platform</h3>
-                        <a href="https://github.com/tawhid-mahmud/ml-deployment-platform" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                        <a href="https://github.com/tawhid-mahmud/ml-deployment-platform" class="project-github"
+                            onclick="event.stopPropagation()">View on GitHub</a>
                     </div>
                 </div>
 
@@ -671,7 +684,8 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Lead Generation Analytics</h3>
-                        <a href="https://github.com/tawhid-mahmud/lead-generation-analytics" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                        <a href="https://github.com/tawhid-mahmud/lead-generation-analytics" class="project-github"
+                            onclick="event.stopPropagation()">View on GitHub</a>
                     </div>
                 </div>
 
@@ -681,7 +695,8 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Sales Performance Dashboard</h3>
-                        <a href="https://github.com/tawhid-mahmud/sales-performance-dashboard" class="project-github" onclick="event.stopPropagation()">View on GitHub</a>
+                        <a href="https://github.com/tawhid-mahmud/sales-performance-dashboard" class="project-github"
+                            onclick="event.stopPropagation()">View on GitHub</a>
                     </div>
                 </div>
             </div>
@@ -691,7 +706,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <h2 class="skills-title fade-in">Technical Skills</h2>
-        
+
         <div class="skills-grid">
             <div class="skill-category fade-in">
                 <h3>📊 Data Analytics</h3>
@@ -704,7 +719,7 @@
                     <li>Power BI</li>
                 </ul>
             </div>
-            
+
             <div class="skill-category fade-in">
                 <h3>💻 Software Engineering</h3>
                 <ul class="skill-list">
@@ -724,9 +739,10 @@
     <section id="contact" class="contact-section">
         <h2 class="contact-title fade-in">Let's Connect</h2>
         <p class="contact-description fade-in">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about data and technology.
+            I'm always open to discussing new opportunities, interesting projects, or just having a chat about data and
+            technology.
         </p>
-        
+
         <div class="contact-info fade-in">
             <div class="contact-item">
                 <span>📧</span>
@@ -742,7 +758,7 @@
     <script>
         // Cursor following image effect - REMOVED
         const floatingImages = null; // Removed image generation
-        
+
         let imageCounter = 0;
         let lastImageTime = 0;
 
@@ -782,11 +798,11 @@
 
         // Enhanced project card interactions
         document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.zIndex = '10';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.zIndex = '1';
             });
         });
@@ -801,4 +817,5 @@
         });
     </script>
 </body>
+
 </html>

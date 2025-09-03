@@ -2,7 +2,9 @@
 
 A modern, responsive portfolio website showcasing my expertise in Data Analytics and Software Engineering.
 
-## 🚀 Live Demo https://m-mahmud.dev/
+## 🚀 Live Demo 
+
+https://m-mahmud.dev/
 
 ## 📊 About
 
@@ -32,4 +34,3 @@ portfolio/
 ├── README.md           # This file
 └── assets/             # Images and resources (if any)
 ```
-

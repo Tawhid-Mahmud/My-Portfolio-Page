@@ -1,33 +1,22 @@
-Hyperspace by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Mohammad Mahmud - Portfolio
+A modern, responsive portfolio website showcasing my expertise in Data Analytics and Software Engineering.
+🚀 Live Demo
+View Portfolio m-mahmud.dev
 
+📊 About
+I'm a passionate Data Analyst and Software Engineer with experience in transforming raw data into actionable insights and building scalable web applications. This portfolio highlights my journey from automotive sales to tech, combining business acumen with technical expertise.
+✨ Features
 
-So I've had the wireframe for this particular design kicking around for some time, but with all
-the other interesting (and in some cases, semi-secret) projects I've been working on it took me
-a little while to get to actually designing and coding it. Fortunately, things have eased up
-enough for me to finaly get around to it, so I'm happy to introduce Hyperspace: a fun, blocky,
-one-page design with a lot of color, a bit of animation, and an additional "generic" page template
-(because hey, even one-page sites usually need an interior page or two). Hope you dig it :)
+Modern Design: Clean, professional interface with smooth animations
+Responsive Layout: Optimized for all devices (desktop, tablet, mobile)
+Project Showcase: 6 featured projects with live demos and GitHub links
+Interactive Elements: Hover effects and smooth scrolling navigation
+Contact Integration: Direct links to email, GitHub, and LinkedIn
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+🛠️ Technologies Used
 
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Frontend: HTML5, CSS3, JavaScript
+Design: Custom CSS with modern gradients and animations
+Fonts: Inter font family from Google Fonts
+Icons: Unicode emojis and custom SVG favicon
+Analytics: Google Analytics 4 for visitor tracking

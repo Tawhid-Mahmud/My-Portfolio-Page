@@ -816,6 +816,77 @@
             }
         });
     </script>
+
+
+
+    <!-- Added google data analytics for buttons-->
+    <script>
+        // Function to track events
+        function trackEvent(action, category, label) {
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label,
+                'value': 1
+            });
+        }
+
+        // Track button clicks when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Track Resume button clicks
+            document.querySelector('.resume-btn').addEventListener('click', function () {
+                trackEvent('download', 'Resume', 'PDF Download');
+                console.log('Resume download tracked');
+            });
+
+            // Track GitHub button clicks
+            document.querySelector('.github-btn').addEventListener('click', function () {
+                trackEvent('click', 'Social Links', 'GitHub Profile');
+                console.log('GitHub click tracked');
+            });
+
+            // Track LinkedIn button clicks
+            document.querySelector('.linkedin-btn').addEventListener('click', function () {
+                trackEvent('click', 'Social Links', 'LinkedIn Profile');
+                console.log('LinkedIn click tracked');
+            });
+
+            // Track project card clicks
+            document.querySelectorAll('.project-card').forEach(function (card, index) {
+                card.addEventListener('click', function () {
+                    const projectTitle = this.querySelector('.project-title').textContent;
+                    trackEvent('click', 'Projects', projectTitle);
+                    console.log('Project clicked: ' + projectTitle);
+                });
+            });
+
+            // Track individual GitHub project links
+            document.querySelectorAll('.project-github').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    const projectTitle = this.closest('.project-content').querySelector('.project-title').textContent;
+                    trackEvent('click', 'Project GitHub', projectTitle);
+                    console.log('GitHub link clicked: ' + projectTitle);
+                });
+            });
+
+            // Track navigation menu clicks
+            document.querySelectorAll('.nav-menu a').forEach(function (navLink) {
+                navLink.addEventListener('click', function () {
+                    const sectionName = this.textContent;
+                    trackEvent('navigation', 'Menu Click', sectionName);
+                    console.log('Navigation clicked: ' + sectionName);
+                });
+            });
+
+            // Track email clicks
+            document.querySelectorAll('a[href^="mailto"]').forEach(function (emailLink) {
+                emailLink.addEventListener('click', function () {
+                    trackEvent('click', 'Contact', 'Email');
+                    console.log('Email link clicked');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

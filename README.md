@@ -2,11 +2,11 @@
 
 A modern, responsive portfolio website showcasing my expertise in Data Analytics and Software Engineering.
 
-## 🚀 Live Demo 
+## Live Demo 
 
 https://m-mahmud.dev/
 
-## 📊 About
+## About
 
 I'm a passionate Data Analyst and Software Engineer with experience in transforming raw data into actionable insights and building scalable web applications. This portfolio highlights my journey from automotive sales to tech, combining business acumen with technical expertise.
 
@@ -18,7 +18,7 @@ I'm a passionate Data Analyst and Software Engineer with experience in transform
 - **Interactive Elements**: Hover effects and smooth scrolling navigation
 - **Contact Integration**: Direct links to email, GitHub, and LinkedIn
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Design**: Custom CSS with modern gradients and animations

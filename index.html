@@ -1,974 +1,443 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Mahmud - Portfolio</title>
-    <link rel="icon" type="image/x-icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%233498db'/><text x='50' y='65' font-family='Arial, sans-serif' font-size='40' font-weight='bold' text-anchor='middle' fill='white'>MM</text></svg>">
-    <link rel="apple-touch-icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%233498db'/><text x='50' y='65' font-family='Arial, sans-serif' font-size='40' font-weight='bold' text-anchor='middle' fill='white'>MM</text></svg>">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>Mohammad Mahmud | Data & AI Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Mohammad Mahmud, a Data Analytics Fellow and AI Engineering Resident specializing in Machine Learning, SQL, and Tableau.">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #ffffff;
-            color: #2c3e50;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            padding-top: 80px;
-        }
+    <!-- Tailwind CSS (Keep in HTML) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        /* Navigation Bar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(44, 62, 80, 0.1);
-            z-index: 1000;
-            padding: 1rem 2rem;
-        }
+    <!-- FontAwesome (Keep in HTML) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    <!-- Google Fonts (Keep in HTML) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-menu a {
-            color: #2c3e50;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a:hover {
-            color: #3498db;
-            background: rgba(52, 152, 219, 0.1);
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .nav-button {
-            padding: 0.4rem 0.8rem;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-
-        .resume-btn {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .resume-btn:hover {
-            background: linear-gradient(135deg, #2980b9, #21618c);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-        }
-
-        .github-btn,
-        .linkedin-btn {
-            background: #f8f9fa;
-            color: #2c3e50;
-            border: 1px solid rgba(44, 62, 80, 0.2);
-        }
-
-        .github-btn:hover {
-            background: #2c3e50;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .linkedin-btn:hover {
-            background: #0077b5;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: calc(100vh - 80px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        }
-
-        .hero-content {
-            text-align: center;
-            z-index: 10;
-            position: relative;
-        }
-
-        .hero-name {
-            font-size: clamp(4rem, 8vw, 8rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, #2c3e50, #3498db, #e74c3c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 2rem;
-            letter-spacing: -2px;
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: #7f8c8d;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* Passion Section */
-        .passion-section {
-            padding: 8rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .passion-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-        }
-
-        .passion-text {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: #5d6d7e;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .passion-highlights {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .highlight-item {
-            text-align: center;
-            padding: 2rem;
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            min-width: 280px;
-            flex: 1;
-            max-width: 400px;
-            border: 1px solid rgba(44, 62, 80, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .highlight-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #3498db, #e74c3c);
-            transition: left 0.6s ease;
-        }
-
-        .highlight-item:hover::before {
-            left: 0;
-        }
-
-        .highlight-item:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-            border-color: #3498db;
-        }
-
-        .highlight-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            transition: transform 0.4s ease;
-        }
-
-        .highlight-item:hover .highlight-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .highlight-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 0.8rem;
-            transition: color 0.3s ease;
-        }
-
-        .highlight-item:hover .highlight-title {
-            color: #3498db;
-        }
-
-        .highlight-desc {
-            color: #7f8c8d;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            transition: color 0.3s ease;
-        }
-
-        .highlight-item:hover .highlight-desc {
-            color: #5d6d7e;
-        }
-
-        /* Projects Section */
-        .projects-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        }
-
-        .projects-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .projects-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 4rem;
-            color: #2c3e50;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .project-card {
-            background: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            cursor: pointer;
-            height: 400px;
-        }
-
-        .project-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 280px;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-card:hover .project-image::before {
-            opacity: 1;
-        }
-
-        .project-overlay {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .project-overlay::before {
-            content: '+';
-            font-size: 20px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-            height: 120px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-
-        .project-github {
-            color: #7f8c8d;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .project-github:hover {
-            color: #3498db;
-        }
-
-        .project-github::before {
-            content: '⚡';
-            font-size: 14px;
-        }
-
-        /* Individual project background images */
-        .project-card:nth-child(1) .project-image {
-            background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center');
-        }
-
-        .project-card:nth-child(2) .project-image {
-            background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center');
-        }
-
-        .project-card:nth-child(3) .project-image {
-            background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center');
-        }
-
-        .project-card:nth-child(4) .project-image {
-            background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop&crop=center');
-        }
-
-        .project-card:nth-child(5) .project-image {
-            background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center');
-        }
-
-        .project-card:nth-child(6) .project-image {
-            background-image: url('https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=600&h=400&fit=crop&crop=center');
-        }
-
-        /* Skills Section */
-        .skills-section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .skills-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 4rem;
-            color: #2c3e50;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: linear-gradient(135deg, #f8f9fa, #ffffff);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-category h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skill-list li {
-            padding: 0.5rem 0;
-            color: #5d6d7e;
-            border-bottom: 1px solid rgba(44, 62, 80, 0.1);
-        }
-
-        .skill-list li:last-child {
-            border-bottom: none;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            text-align: center;
-        }
-
-        .contact-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-        }
-
-        .contact-description {
-            font-size: 1.2rem;
-            color: #5d6d7e;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            line-height: 1.6;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-bottom: 3rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            color: #2c3e50;
-            font-weight: 500;
-        }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Navigation */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .nav-buttons {
-                gap: 0.5rem;
-            }
-
-            .nav-button {
-                padding: 0.3rem 0.6rem;
-                font-size: 0.75rem;
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .passion-highlights {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-name {
-                font-size: 3rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-
-<!-- Adding google data analytics to collect and create dashboard -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4N6SJ9KLEY"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-4N6SJ9KLEY');
-</script>
-
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-menu">
-                <li><a href="#home">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-buttons">
-                <a href="Mohammad_Mahmud_Resume.pdf" class="nav-button resume-btn" target="_blank">
-                    Resume
-                </a>
-                <a href="https://github.com/Tawhid-Mahmud" class="nav-button github-btn" target="_blank">
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/mahmud45/" class="nav-button linkedin-btn" target="_blank">
-                    LinkedIn
-                </a>
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Dynamic Background -->
+    <canvas id="canvas-bg"></canvas>
+    <div class="blob top-0 right-0 translate-x-1/3 -translate-y-1/3"></div>
+    <div class="blob bottom-0 left-0 -translate-x-1/3 translate-y-1/3"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight flex items-center gap-2">
+                <span
+                    class="w-8 h-8 rounded-lg bg-sky-500 flex items-center justify-center text-white text-xs font-bold">MM</span>
+                <span class="text-white">Mahmud<span class="text-sky-400">Dev</span></span>
+            </a>
+
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#stack" class="hover:text-white transition-colors">Tech Stack</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">Resume</a>
             </div>
+
+            <a href="#contact"
+                class="px-5 py-2.5 rounded-full bg-white text-slate-900 text-sm font-semibold hover:bg-sky-50 transition-colors">
+                Contact Me
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-name">Mohammad Mahmud</h1>
-            <p class="hero-subtitle">Data Analyst & Data Engineer</p>
+    <section id="about" class="min-h-screen flex flex-col justify-center pt-20 px-6 relative">
+        <div class="max-w-5xl mx-auto w-full">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-400 text-xs font-semibold mb-6 reveal">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+                </span>
+                Data Analytics Fellow & AI Resident
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight mb-8 reveal stagger-1">
+                Building Intelligent <br>
+                <span class="text-gradient-accent">Data Solutions</span> <br>
+                & Machine Learning.
+            </h1>
+
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mb-10 reveal stagger-2 leading-relaxed">
+                I transform raw data into actionable insights. Specializing in <span class="text-white">Predictive
+                    Models</span>, <span class="text-white">Automated Pipelines</span>, and <span
+                    class="text-white">Business Intelligence</span>.
+            </p>
+
+            <div class="flex flex-wrap gap-4 reveal stagger-3">
+                <a href="#projects"
+                    class="px-8 py-4 rounded-lg bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-all shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)]">
+                    View Projects
+                </a>
+                <a href="#stack"
+                    class="px-8 py-4 rounded-lg glass-panel text-white font-semibold hover:bg-white/10 transition-all">
+                    Explore Stack
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-slate-500">
+            <i class="fa-solid fa-arrow-down"></i>
         </div>
     </section>
 
-    <!-- Passion Section -->
-    <section class="passion-section fade-in">
-        <h2 class="passion-title">My Passion for Data Analytics & Software Engineering</h2>
-        <p class="passion-text">
-            I'm driven by the power of data to tell stories and the elegance of code to solve complex problems.
-            My journey combines analytical thinking with creative problem-solving, transforming raw data into
-            actionable insights and building software solutions that make a real impact.
-        </p>
-
-        <div class="passion-highlights">
-            <div class="highlight-item">
-                <div class="highlight-icon">📊</div>
-                <h3 class="highlight-title">Data Analytics</h3>
-                <p class="highlight-desc">Transforming data into meaningful insights through statistical analysis and
-                    visualization</p>
+    <!-- Tech Stack (Bento Grid) -->
+    <section id="stack" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 text-center reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">The Engineering <span
+                        class="text-gradient-accent">Arsenal</span></h2>
+                <p class="text-slate-400">Built for accuracy, efficiency, and insight.</p>
             </div>
-            <div class="highlight-item">
-                <div class="highlight-icon">💻</div>
-                <h3 class="highlight-title">Software Engineering</h3>
-                <p class="highlight-desc">Building scalable, efficient, and user-centric applications with modern
-                    technologies</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[180px]">
+
+                <!-- Core Languages -->
+                <div
+                    class="col-span-1 md:col-span-2 row-span-2 glass-panel rounded-3xl p-8 bento-card flex flex-col justify-between reveal">
+                    <div>
+                        <div
+                            class="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400 text-2xl mb-4">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Core & Analytics</h3>
+                        <p class="text-slate-400 text-sm">My primary tools for data manipulation and scripting.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 mt-6">
+                        <div class="tech-item px-4 py-2 rounded-lg border border-white/5 text-sm font-medium">Python
+                        </div>
+                        <div class="tech-item px-4 py-2 rounded-lg border border-white/5 text-sm font-medium">SQL</div>
+                        <div class="tech-item px-4 py-2 rounded-lg border border-white/5 text-sm font-medium">R
+                            Programming</div>
+                        <div class="tech-item px-4 py-2 rounded-lg border border-white/5 text-sm font-medium">JavaScript
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud -->
+                <div
+                    class="col-span-1 md:col-span-2 row-span-1 glass-panel rounded-3xl p-8 bento-card flex items-center justify-between reveal stagger-1">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">Cloud & Web</h3>
+                        <p class="text-slate-400 text-sm">AWS & Full Stack Certified</p>
+                    </div>
+                    <div class="flex -space-x-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-[#232f3e] border border-slate-700 flex items-center justify-center text-white text-xs">
+                            <i class="fa-brands fa-aws"></i>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full bg-orange-600 border border-slate-700 flex items-center justify-center text-white text-xs">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-full bg-blue-600 border border-slate-700 flex items-center justify-center text-white text-xs">
+                            <i class="fa-brands fa-css3-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning -->
+                <div
+                    class="col-span-1 row-span-1 glass-panel rounded-3xl p-6 bento-card flex flex-col justify-center reveal stagger-2">
+                    <i class="fa-solid fa-brain text-sky-400 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold">AI & ML</h3>
+                    <p class="text-slate-400 text-xs mt-1">Scikit-Learn, Random Forest, KNN</p>
+                </div>
+
+                <!-- Automation -->
+                <div
+                    class="col-span-1 row-span-1 glass-panel rounded-3xl p-6 bento-card flex flex-col justify-center reveal stagger-3">
+                    <i class="fa-solid fa-robot text-pink-400 text-3xl mb-4"></i>
+                    <h3 class="text-lg font-bold">Automation</h3>
+                    <p class="text-slate-400 text-xs mt-1">Selenium, Google Colab, CRMs</p>
+                </div>
+
+                <!-- Visualization -->
+                <div
+                    class="col-span-1 md:col-span-4 row-span-1 glass-panel rounded-3xl p-8 bento-card flex flex-col md:flex-row items-center justify-between gap-6 reveal">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Business Intelligence</h3>
+                            <p class="text-slate-400 text-sm">Creating dashboards that drive strategic decisions.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs">Tableau</span>
+                        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs">PowerBI</span>
+                        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs">Excel
+                            (Adv)</span>
+                        <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs">Google
+                            Analytics</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="projects-container">
-            <h2 class="projects-title fade-in">My Projects</h2>
+    <section id="projects" class="py-20 px-6 bg-black/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Featured <span
+                            class="text-gradient-accent">Projects</span></h2>
+                    <p class="text-slate-400 max-w-md">End-to-end analysis and machine learning implementation.</p>
+                </div>
+                <a href="https://github.com/tawhid-mahmud" target="_blank"
+                    class="hidden md:flex items-center gap-2 text-sky-400 hover:text-sky-300 transition-colors mt-4 md:mt-0">
+                    View Github <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+            </div>
 
-            <div class="projects-grid">
-                <div class="project-card" onclick="window.open('#', '_blank')">
-                    <div class="project-image">
-                        <div class="project-overlay"></div>
+            <div class="space-y-24">
+
+                <!-- Project 1: Customer Churn -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group">
+                    <div
+                        class="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-800 aspect-video reveal">
+                        <!-- Abstract Representation of Project -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 p-8 flex items-center justify-center">
+                            <div
+                                class="w-full max-w-sm h-32 bg-slate-950 rounded-lg border border-slate-700 relative overflow-hidden shadow-2xl">
+                                <div class="absolute top-0 left-0 w-full h-1 bg-slate-700"></div>
+                                <div class="p-6 font-mono text-xs leading-relaxed">
+                                    <span class="text-pink-400">from</span> sklearn <span
+                                        class="text-pink-400">import</span> RandomForest<br>
+                                    <span class="text-slate-400"># Train model on banking data</span><br>
+                                    <span class="text-blue-400">model</span>.fit(X_train, y_train)<br>
+                                    <span class="text-green-400">> Accuracy: 85%</span><br>
+                                    <span class="text-green-400">> Precision: 89%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Overlay -->
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="px-6 py-3 bg-white text-slate-900 font-bold rounded-full">View Code</span>
+                        </div>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Marketing Ad Campaign Analysis</h3>
-                        <a href="https://github.com/tawhid-mahmud/marketing-campaign-analysis" class="project-github"
-                            onclick="event.stopPropagation()">View on GitHub</a>
+
+                    <div class="reveal stagger-1">
+                        <div class="text-sky-400 font-mono text-sm mb-2">01. MACHINE LEARNING</div>
+                        <h3 class="text-3xl font-bold mb-4">Customer Churn Prediction</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Implemented a machine learning model to identify at-risk banking customers. Built an
+                            interactive Python dashboard to visualize risk scores and automate personalized retention
+                            emails using AI-generated explanations.
+                        </p>
+
+                        <div class="mb-8">
+                            <h4 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">Tech Stack</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-xs text-slate-300">Python</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-xs text-slate-300">Scikit-Learn</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-xs text-slate-300">Pandas</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-xs text-slate-300">AI
+                                    Integration</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-2 text-slate-400 text-sm mb-8">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                Achieved 85% accuracy and 92% F1-score.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                Strategy implemented to reduce churn by 20%.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="window.open('#', '_blank')">
-                    <div class="project-image">
-                        <div class="project-overlay"></div>
+                <!-- Project 2: Marketing Analysis -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center group">
+                    <div class="order-2 lg:order-1 reveal">
+                        <div class="text-pink-400 font-mono text-sm mb-2">02. DATA ANALYTICS</div>
+                        <h3 class="text-3xl font-bold mb-4">Marketing Ad Campaign Analysis</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            Cleaned and analyzed 700+ rows of campaign data to identify demographic engagement trends.
+                            Produced Tableau visualizations that drove a strategic pivot in marketing spend for beauty
+                            products.
+                        </p>
+
+                        <div class="mb-8">
+                            <h4 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">Tech Stack</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-xs text-slate-300">Excel
+                                    (Pivot Tables)</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-xs text-slate-300">Tableau</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-xs text-slate-300">Data
+                                    Cleaning</span>
+                                <span
+                                    class="px-3 py-1 rounded bg-slate-800 border border-slate-700 text-xs text-slate-300">Canva</span>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-2 text-slate-400 text-sm mb-8">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                Increased data accuracy by 20% via standardization.</li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                Insights used to reduce acquisition costs by 25%.</li>
+                        </ul>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">EV Registration Data Analysis</h3>
-                        <a href="https://github.com/tawhid-mahmud/ev-registration-analysis" class="project-github"
-                            onclick="event.stopPropagation()">View on GitHub</a>
+
+                    <div
+                        class="order-1 lg:order-2 relative rounded-2xl overflow-hidden border border-white/10 bg-slate-800 aspect-video reveal stagger-1">
+                        <!-- Abstract Representation -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-bl from-slate-900 to-slate-800 flex flex-col items-center justify-center p-8">
+                            <div class="grid grid-cols-3 gap-2 w-full max-w-xs opacity-80">
+                                <div class="h-16 bg-slate-700 rounded animate-pulse"></div>
+                                <div class="h-16 bg-sky-600/30 rounded animate-pulse delay-75 border border-sky-500/50">
+                                </div>
+                                <div class="h-16 bg-slate-700 rounded animate-pulse delay-150"></div>
+                                <div
+                                    class="col-span-3 h-24 bg-slate-800 border border-white/10 rounded flex flex-col items-center justify-center">
+                                    <div class="w-32 h-2 bg-emerald-500/50 rounded-full mb-2"></div>
+                                    <div class="w-24 h-2 bg-emerald-500/30 rounded-full"></div>
+                                    <span class="text-xs text-emerald-400 mt-2">+44% Engagement</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card" onclick="window.open('#', '_blank')">
-                    <div class="project-image">
-                        <div class="project-overlay"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Customer Churn Prediction</h3>
-                        <a href="https://github.com/tawhid-mahmud/customer-churn-prediction" class="project-github"
-                            onclick="event.stopPropagation()">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="window.open('#', '_blank')">
-                    <div class="project-image">
-                        <div class="project-overlay"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">ML Model Deployment Platform</h3>
-                        <a href="https://github.com/tawhid-mahmud/ml-deployment-platform" class="project-github"
-                            onclick="event.stopPropagation()">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="window.open('#', '_blank')">
-                    <div class="project-image">
-                        <div class="project-overlay"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Lead Generation Analytics</h3>
-                        <a href="https://github.com/tawhid-mahmud/lead-generation-analytics" class="project-github"
-                            onclick="event.stopPropagation()">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card" onclick="window.open('#', '_blank')">
-                    <div class="project-image">
-                        <div class="project-overlay"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Sales Performance Dashboard</h3>
-                        <a href="https://github.com/tawhid-mahmud/sales-performance-dashboard" class="project-github"
-                            onclick="event.stopPropagation()">View on GitHub</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <h2 class="skills-title fade-in">Technical Skills</h2>
+    <!-- Experience / Journey -->
+    <section id="experience" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center reveal">Professional <span
+                    class="text-gradient-accent">Journey</span></h2>
 
-        <div class="skills-grid">
-            <div class="skill-category fade-in">
-                <h3>📊 Data Analytics</h3>
-                <ul class="skill-list">
-                    <li>Data Analytics & Visualization</li>
-                    <li>Microsoft Excel (Advanced)</li>
-                    <li>Tableau</li>
-                    <li>SQL</li>
-                    <li>Database Management</li>
-                    <li>Power BI</li>
-                </ul>
-            </div>
+            <div class="relative border-l border-slate-700 ml-4 md:ml-12 space-y-12">
 
-            <div class="skill-category fade-in">
-                <h3>💻 Software Engineering</h3>
-                <ul class="skill-list">
-                    <li>AI Integration</li>
-                    <li>React & Next.js</li>
-                    <li>JavaScript</li>
-                    <li>Git & GitHub</li>
-                    <li>MongoDB & PostgreSQL</li>
-                    <li>Flask</li>
-                    <li>API Development & Integration</li>
-                </ul>
+                <!-- Job 1: COOP -->
+                <div class="relative pl-8 md:pl-12 reveal">
+                    <div
+                        class="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-sky-500 shadow-[0_0_10px_rgba(56,189,248,0.5)]">
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl hover:bg-white/5 transition-colors">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Data Analytics Captain</h3>
+                            <span class="text-sky-400 text-sm font-mono">Aug 2025 - Present</span>
+                        </div>
+                        <div class="text-slate-500 font-medium mb-4">COOP Careers</div>
+                        <ul class="list-disc list-outside ml-4 text-slate-400 text-sm space-y-2">
+                            <li>Facilitate weekly Excel and Tableau sessions for 16+ fellows.</li>
+                            <li>Collaborate with captains to improve lesson plans, increasing completion rates by 20%.
+                            </li>
+                            <li>Lead project planning sessions to improve team collaboration and timeline management.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2: Headstarter -->
+                <div class="relative pl-8 md:pl-12 reveal stagger-1">
+                    <div class="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-slate-500"></div>
+                    <div class="glass-panel p-6 rounded-xl hover:bg-white/5 transition-colors">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">AI Engineering Resident</h3>
+                            <span class="text-slate-500 text-sm font-mono">Aug 2024 - Jan 2025</span>
+                        </div>
+                        <div class="text-slate-500 font-medium mb-4">Headstarter</div>
+                        <ul class="list-disc list-outside ml-4 text-slate-400 text-sm space-y-2">
+                            <li>Developed 5+ ML projects using Google Colab GPU, reducing training time by 80%.</li>
+                            <li>Implemented algorithms (Naive Bayes, Random Forest) boosting efficiency by 15%.</li>
+                            <li>Automated end-to-end web app testing with Selenium, cutting manual efforts by 30%.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3: Paragon Honda -->
+                <div class="relative pl-8 md:pl-12 reveal stagger-2">
+                    <div class="absolute -left-[5px] top-2 w-2 h-2 rounded-full bg-slate-500"></div>
+                    <div class="glass-panel p-6 rounded-xl hover:bg-white/5 transition-colors">
+                        <div class="flex flex-col md:flex-row justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Acquisition Specialist</h3>
+                            <span class="text-slate-500 text-sm font-mono">June 2022 - May 2024</span>
+                        </div>
+                        <div class="text-slate-500 font-medium mb-4">Paragon Honda</div>
+                        <ul class="list-disc list-outside ml-4 text-slate-400 text-sm space-y-2">
+                            <li>Analyzed lead data using Excel/CRM, increasing monthly leads by 100% ($100K+ revenue).
+                            </li>
+                            <li>Optimized pricing strategy via market research, increasing buybacks by 40%.</li>
+                            <li>Automated communication workflows, reducing manual processing by 15 hours/week.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2 class="contact-title fade-in">Let's Connect</h2>
-        <p class="contact-description fade-in">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about data and
-            technology.
-        </p>
-
-        <div class="contact-info fade-in">
-            <div class="contact-item">
-                <span>📧</span>
-                <span>tawhid.mahmud42@gmail.com</span>
-            </div>
-            <div class="contact-item">
-                <span>📍</span>
-                <span>New York, NY</span>
+    <!-- CTA -->
+    <section id="contact" class="py-32 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-sky-500/5"></div>
+        <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Let's Connect</h2>
+            <p class="text-slate-400 text-lg mb-10">
+                Open to opportunities in Data Analytics, Data Engineering, and AI.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="mailto:tawhid.mahmud42@gmail.com"
+                    class="px-8 py-4 rounded-lg bg-white text-slate-900 font-bold hover:bg-sky-50 transition-colors">
+                    <i class="fa-solid fa-envelope mr-2"></i> Email Me
+                </a>
+                <a href="https://linkedin.com/in/mahmud45" target="_blank"
+                    class="px-8 py-4 rounded-lg border border-white/10 hover:bg-white/5 transition-colors font-semibold">
+                    <i class="fa-brands fa-linkedin mr-2"></i> LinkedIn
+                </a>
+                <a href="Mohammad Mahmud Resume.pdf" target="_blank"
+                    class="px-8 py-4 rounded-lg border border-sky-500/30 bg-sky-500/10 text-sky-400 hover:bg-sky-500/20 transition-colors font-semibold">
+                    <i class="fa-solid fa-download mr-2"></i> Download CV
+                </a>
             </div>
         </div>
     </section>
 
-    <script>
-        // Cursor following image effect - REMOVED
-        const floatingImages = null; // Removed image generation
+    <footer class="border-t border-white/5 py-12 text-center text-slate-500 text-sm">
+        <p>&copy; 2025 Mohammad Mahmud. Built with HTML, Tailwind & JS.</p>
+        <div class="flex justify-center gap-6 mt-4">
+            <a href="https://github.com/tawhid-mahmud" target="_blank" class="hover:text-white transition-colors"><i
+                    class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/mahmud45" target="_blank" class="hover:text-white transition-colors"><i
+                    class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:tawhid.mahmud42@gmail.com" class="hover:text-white transition-colors"><i
+                    class="fa-solid fa-envelope"></i></a>
+        </div>
+    </footer>
 
-        let imageCounter = 0;
-        let lastImageTime = 0;
-
-        // All image generation code removed
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Enhanced project card interactions
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.zIndex = '10';
-            });
-
-            card.addEventListener('mouseleave', function () {
-                this.style.zIndex = '1';
-            });
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-    </script>
-
-
-    <!-- Adding google analytics for buttons -->
-    <script>
-        // Function to track events
-        function trackEvent(action, category, label) {
-            gtag('event', action, {
-                'event_category': category,
-                'event_label': label,
-                'value': 1
-            });
-        }
-
-        // Track button clicks when page loads
-        document.addEventListener('DOMContentLoaded', function () {
-
-            // Track Resume button clicks
-            document.querySelector('.resume-btn').addEventListener('click', function () {
-                trackEvent('download', 'Resume', 'PDF Download');
-                console.log('Resume download tracked');
-            });
-
-            // Track GitHub button clicks
-            document.querySelector('.github-btn').addEventListener('click', function () {
-                trackEvent('click', 'Social Links', 'GitHub Profile');
-                console.log('GitHub click tracked');
-            });
-
-            // Track LinkedIn button clicks
-            document.querySelector('.linkedin-btn').addEventListener('click', function () {
-                trackEvent('click', 'Social Links', 'LinkedIn Profile');
-                console.log('LinkedIn click tracked');
-            });
-
-            // Track project card clicks
-            document.querySelectorAll('.project-card').forEach(function (card, index) {
-                card.addEventListener('click', function () {
-                    const projectTitle = this.querySelector('.project-title').textContent;
-                    trackEvent('click', 'Projects', projectTitle);
-                    console.log('Project clicked: ' + projectTitle);
-                });
-            });
-
-            // Track individual GitHub project links
-            document.querySelectorAll('.project-github').forEach(function (link) {
-                link.addEventListener('click', function (e) {
-                    const projectTitle = this.closest('.project-content').querySelector('.project-title').textContent;
-                    trackEvent('click', 'Project GitHub', projectTitle);
-                    console.log('GitHub link clicked: ' + projectTitle);
-                });
-            });
-
-            // Track navigation menu clicks
-            document.querySelectorAll('.nav-menu a').forEach(function (navLink) {
-                navLink.addEventListener('click', function () {
-                    const sectionName = this.textContent;
-                    trackEvent('navigation', 'Menu Click', sectionName);
-                    console.log('Navigation clicked: ' + sectionName);
-                });
-            });
-
-            // Track email clicks
-            document.querySelectorAll('a[href^="mailto"]').forEach(function (emailLink) {
-                emailLink.addEventListener('click', function () {
-                    trackEvent('click', 'Contact', 'Email');
-                    console.log('Email link clicked');
-                });
-            });
-        });
-    </script>
-
-
-
-    <!-- Added google data analytics for buttons-->
-    <script>
-        // Function to track events
-        function trackEvent(action, category, label) {
-            gtag('event', action, {
-                'event_category': category,
-                'event_label': label,
-                'value': 1
-            });
-        }
-
-        // Track button clicks when page loads
-        document.addEventListener('DOMContentLoaded', function () {
-
-            // Track Resume button clicks
-            document.querySelector('.resume-btn').addEventListener('click', function () {
-                trackEvent('download', 'Resume', 'PDF Download');
-                console.log('Resume download tracked');
-            });
-
-            // Track GitHub button clicks
-            document.querySelector('.github-btn').addEventListener('click', function () {
-                trackEvent('click', 'Social Links', 'GitHub Profile');
-                console.log('GitHub click tracked');
-            });
-
-            // Track LinkedIn button clicks
-            document.querySelector('.linkedin-btn').addEventListener('click', function () {
-                trackEvent('click', 'Social Links', 'LinkedIn Profile');
-                console.log('LinkedIn click tracked');
-            });
-
-            // Track project card clicks
-            document.querySelectorAll('.project-card').forEach(function (card, index) {
-                card.addEventListener('click', function () {
-                    const projectTitle = this.querySelector('.project-title').textContent;
-                    trackEvent('click', 'Projects', projectTitle);
-                    console.log('Project clicked: ' + projectTitle);
-                });
-            });
-
-            // Track individual GitHub project links
-            document.querySelectorAll('.project-github').forEach(function (link) {
-                link.addEventListener('click', function (e) {
-                    const projectTitle = this.closest('.project-content').querySelector('.project-title').textContent;
-                    trackEvent('click', 'Project GitHub', projectTitle);
-                    console.log('GitHub link clicked: ' + projectTitle);
-                });
-            });
-
-            // Track navigation menu clicks
-            document.querySelectorAll('.nav-menu a').forEach(function (navLink) {
-                navLink.addEventListener('click', function () {
-                    const sectionName = this.textContent;
-                    trackEvent('navigation', 'Menu Click', sectionName);
-                    console.log('Navigation clicked: ' + sectionName);
-                });
-            });
-
-            // Track email clicks
-            document.querySelectorAll('a[href^="mailto"]').forEach(function (emailLink) {
-                emailLink.addEventListener('click', function () {
-                    trackEvent('click', 'Contact', 'Email');
-                    console.log('Email link clicked');
-                });
-            });
-        });
-    </script>
+    <!-- Link to your custom JS file -->
+    <script src="script.js"></script>
 </body>
 
 </html>
